@@ -1,57 +1,33 @@
-(function () {
-'use strict';
+(function() {
+    'use strict';
 
-angular.module('LunchCheck', [])
-.controller('LunchCheckController', LunchCheckController);
+    angular.module('LunchCheck', [])
+        .controller('LunchCheckController', LunchCheckController);
 
-LunchCheckController.$inject = ['$scope']
-function LunchCheckController($scope) {
-  //Function to count number of items from input
-  $scope.countItems= function(items) {
-			//, , is not an item
-      var count=0;
-			if(items==="")
-				return 0;
-      if(items !== undefined){
-			var array= items.split(',');
-    	for (var i = 0; i < array.length; i++) {
-			if(array[i].trim()!=="")
-          count++;
-    		}
-      }
-			return count;
-		};
+    LunchCheckController.$inject = ['$scope'];
 
-  //Function to display appropriate message
-    $scope.showMessage = function () {
-      var dishCount = $scope.countItems($scope.dishes);
-      if(dishCount < 1){
-        $scope.message = "Please enter data first";
-        $scope.colChange = {
-             "color": "red"
+    function LunchCheckController($scope) {
+        $scope.dishes = '';
+        $scope.message = '';
+        $scope.checked = false;
+
+        $scope.checkLunch = function() {
+            if ($scope.dishes.trim().length === 0) {
+                $scope.empty = true;
+            } else {
+                $scope.checked = true;
+                $scope.empty = false;
+                var arrayDishes = $scope.dishes.split(',');
+                var arrayDishesWithoutEmptys = arrayDishes.filter(function(v) {
+                    return v.trim() !== '';
+                });
+
+                if (arrayDishesWithoutEmptys.length <= 3) {
+                    $scope.message = 'Enjoy!';
+                } else {
+                    $scope.message = 'Too much!';
+                }
+            }
         };
-        $scope.borChange = {
-             "border-color": "red"
-        };
-      }
-      else if(dishCount <= 3){
-        $scope.message = "Enjoy";
-        $scope.applyColor();
-      }
-      else {
-        $scope.message = "Too much";
-        $scope.applyColor();
-      }
-  }
-  //Function to apply Color to message and border
-   $scope.applyColor = function(){
-    $scope.colChange = {
-         "color": 'green'
-    };
-    $scope.borChange = {
-         "border-color": "green"
-    };
-  }
-};
-
+    }
 })();

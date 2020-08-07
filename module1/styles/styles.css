@@ -1,0 +1,26 @@
+*{
+    margin-top: 40px;
+    padding: 0;
+    font-family: 'Agency FB', arial;
+@import url(http://allfont.net/allfont.css?fonts=agency-fb);
+    font-weight: 600;
+    font-size: 25px;
+    letter-spacing: 3px;
+
+
+}
+
+
+h1{
+
+
+    text-align: center;
+
+
+}
+
+#footer{
+    text-align: center;
+    text-decoration: overline;
+
+}
