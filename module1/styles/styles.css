@@ -1,12 +1,12 @@
 *{
     margin-top: 40px;
     padding: 0;
-    background-color:lightblue;
-    font-family: 'Agency FB', arial;
+    /* font-family: ; */
+    background-color:aliceblue;
 @import url(http://allfont.net/allfont.css?fonts=agency-fb);
-    font-weight: 600;
-    font-size: 25px;
-    letter-spacing: 3px;
+    font-weight: 200;
+    font-size: 20px;
+    letter-spacing: 2px;
 
 
 }
