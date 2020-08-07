@@ -1,8 +1,13 @@
 *{
     margin-top: 40px;
     padding: 0;
+<<<<<<< HEAD
     /* font-family: ; */
     background-color:aliceblue;
+=======
+    font-family: 'Agency FB', arial;
+    background-color:pink;
+>>>>>>> b09d5ebcc3f45bd3105844b211bda76e75991e99
 @import url(http://allfont.net/allfont.css?fonts=agency-fb);
     font-weight: 200;
     font-size: 20px;
