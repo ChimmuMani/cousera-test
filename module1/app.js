@@ -30,12 +30,12 @@ function LunchCheckController($scope) {
         $scope.colChange = {
              "color": "red"
         };
-        $scope.borChange = {
+        $scope.borderChange = {
              "border-color": "red"
         };
       }
       else if(dishCount <= 3){
-        $scope.message = "Enjoy";
+        $scope.message = "Enjoy ";
         $scope.applyColor();
       }
       else {
@@ -48,7 +48,7 @@ function LunchCheckController($scope) {
     $scope.colChange = {
          "color": 'green'
     };
-    $scope.borChange = {
+    $scope.borderChange = {
          "border-color": "green"
     };
   }
