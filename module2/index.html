@@ -4,7 +4,9 @@
   <head>
     <title>Shopping List Check Off</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+
     <style>
       .emptyMessage {
         font-weight: bold;
@@ -18,37 +20,65 @@
       li > button {
         margin-left: 6px;
       }
-      button > span {
-        color: green;
-      }
-    </style>
-  </head>
-<body>
-<div class="container">
-<h1>Shopping List Check Off</h1>
 
-<div class="row">
+    </style>
+
+  <script type="text/javascript"  src="scripts/angular.min.js"></script>
+  <script type="text/javascript"  src="scripts/app.js"></script>
+
+  </head>
+<body ng-app="ShoppingListCheckOff" style="background-color:lightblue">
+<div class="container"  >
+  <nav class="navbar navbar-default"  style="background-color:lightblue">
+       <div class="container-fluid" >
+         <div class="navbar-header" >
+           <h1 class="navbar-brand" href="#">Shopping List Check Off</h1>
+         </div>
+       </div>
+     </nav>
+
+
+<div class="row col-md-12" >
+
 
   <!-- To Buy List -->
-  <div class="col-md-6">
+  <div class="col-md-6" ng-controller="ToBuyShoppingController as buyShoplist">
    <h2>To Buy:</h2>
-   <ul>
-     <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
-     <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
-   </ul>
-   <div class="emptyMessage">Everything is bought!</div>
+     <div class="panel panel-default"  style ="color:blue" ng-class="{'panel-danger':!buyShoplist.items.length}">
+       <div class="panel-body">
+   <ul class="list-group" >
+     <li class="list-group-item clearfix" ng-repeat="item in buyShoplist.items" >
+   <div class="col-md-9" ><span>Buy {{item.quantity}} {{item.name}}</span> </div><div class="col-md-3"><button class="btn btn-success"  ng-click="buyShoplist.buyItem($index)"> Bought</button></div></li>
+     </ul>
+        <div class="emptyMessage" ng-if="!buyShoplist.items.length">Everything is bought!</div>
+     </div>
+     </div>
+
   </div>
 
   <!-- Already Bought List -->
-  <div class="col-md-6">
+  <div class="col-md-6"  ng-controller=" AlreadyBoughtShoppingController as boughtList">
    <h2>Already Bought:</h2>
-   <ul>
-     <li>Bought 10 cookies</li>
-   </ul>
-   <div class="emptyMessage">Nothing bought yet.</div>
+   <div class="panel panel-default" ng-class="{'panel-danger':!boughtList.items.length,'panel-success':boughtList.finishedShopping()}">
+   <div class="panel-body">
+   <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in boughtList.items ">
+                  <span>Bought {{item.quantity}} {{item.name}}</span>
+                </li>
+              </ul>
+   <div class="emptyMessage" ng-if="!boughtList.items.length">Nothing bought yet.</div>
+   </div>
+   </div>
   </div>
 </div>
 </div>
 
+
 </body>
+<footer class="footer text-center">
+      <div class="container">
+      Thank You
+      </div>
+    </footer>
+
   </html>
