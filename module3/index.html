@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- <link rel="icon" href="../favicon.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+  <script src="app/angular.min.js"></script>
+  <script src="app/app.js"></script>
+  s    <script src="app/narrowDownIt.Controller.js"></script>
+    <script src="app/menuSearch.service.js"></script>
+    <script src="app/constant.js"></script>
+    <script src="app/foundItems/foundItems.directive.js"></script>
+    <script src="app/loader/loader.directive.js"></script>
+  </head>
+<body ng-app="myApp" >
+   <div class="container" ng-controller="narrowDownItController as search" >
+    <h1 class="text-primary">Narrow Down Your Chinese Menu Choice</h1>
+
+          <div class="row">
+            <div class="col-md-12">
+              <form class="form">
+    <div class="form-group">
+      <input type="text" placeholder="search term" class="form-control"  ng-model="search.SearchTerm">
+    </div>
+    <div class="form-group narrow-button">
+      <button class="btn btn-primary" ng-click="search.SearchMenuItem()">Narrow It Down For Me!</button>
+    </div>
+    </form>
+    </div>
+    </div>
+
+    <loader ng-if="search.loading"></loader>
+
+    <!-- found-items should be implemented as a component -->
+    <found-items
+    ng-if="!search.loading"
+    items="search.found"
+    message="search.message"
+     onRemove="search.RemoveMenuItem(index)"></found-items>
+  </div>
+
+</body>
+</html>
