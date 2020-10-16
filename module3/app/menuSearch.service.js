@@ -40,7 +40,7 @@ function getMatchedMenuItems(SearchTerm){
 
   function getMenuItemsComplete(data){
     var foundItems=data.menu_items;//menu_items look on json
-    foundItems=foundItems.filter(function(item){
+    foundItems=foundItems.filter(function(SearchTerm){
       return item.description.indexOf(SearchTerm)!=-1;
     });
      return foundItems || [];
