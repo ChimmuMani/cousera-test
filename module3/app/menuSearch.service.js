@@ -2,7 +2,7 @@
   'use strict';
     angular.module('myApp')
   .factory('MenuSearchService',MenuSearchService);
-  MenuSearchService.$inject=['$http','$q','APIBasePath']
+  MenuSearchService.$inject = ['$http', '$q', 'ApiBasePath']
   function MenuSearchService($http,$q,APIBasePath){
     var service={
       getMatchedMenuItems:getMatchedMenuItems
@@ -35,7 +35,7 @@ function getMatchedMenuItems(SearchTerm){
   if(SearchTerm==''){
     return $q.when([]);
   }
-  return $http.get('APIBasePath'+"/menu_items.json")
+  return $http.get(APIBasePath+"/menu_items.json")
   .then(getMenuItemsComplete);// response contains data
 
   function getMenuItemsComplete(data){
