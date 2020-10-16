@@ -1,6 +1,6 @@
 (function() {
   'use strict';
     angular.module('myApp')
-    .constant('APIBasePath', "https://davids-restaurant.herokuapp.com");
+   .constant('ApiBasePath', "//davids-restaurant.herokuapp.com");
 
 })();

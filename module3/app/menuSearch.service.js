@@ -2,8 +2,8 @@
   'use strict';
     angular.module('myApp')
   .factory('MenuSearchService',MenuSearchService);
-  MenuSearchService.$inject=['$q','$http','APIBasePath']
-  function MenuSearchService($q,$http,APIBasePath){
+  MenuSearchService.$inject=['$http','$q','APIBasePath']
+  function MenuSearchService($http,$q,APIBasePath){
     var service={
       getMatchedMenuItems:getMatchedMenuItems
     };
