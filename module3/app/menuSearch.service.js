@@ -41,7 +41,7 @@ function getMatchedMenuItems(SearchTerm){
   function getMenuItemsComplete(data){
   //  console.log(data.menu_items);
     var foundItems=data.menu_items;//menu_items look on json
-    console.log(data.data.menu.item);
+  
     foundItems=foundItems.filter(function(item){
       return item.description.indexOf(SearchTerm)!=-1;
     });
