@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  angular.module('myApp', [])
+  angular.module('myApp')
   .controller('narrowDownItController',narrowDownItController);
   narrowDownItController.$inject=['MenuSearchService']
   function narrowDownItController(MenuSearchService){
@@ -8,20 +8,21 @@
     vm.found=[];
     vm.RemoveMenuItem=RemoveMenuItem;
     vm.SearchMenuItem=SearchMenuItem;
-    vm.SearchTerm='';
+    vm.searchTerm='';
 
 
     function SearchMenuItem(){
       vm.loading=true;
       vm.message='';
-    return MenuSearchService.getMatchedMenuItems(vm.SearchTerm)
-    .then(function(data){
-      vm.found=data;
-      vm.loading=false;
-      if(vm.found.length==0){
-        vm.message='Nothing Found !!!!'
-      }
-    })
+      return MenuSearchService.getMatchedMenuItems(vm.searchTerm)
+         .then(function(data) {
+           vm.found = data;
+
+           vm.loading = false;
+           if (vm.found.length == 0) {
+             vm.message = 'Nothing found!';
+           }
+         })
     .catch(function(error){
       console.log(
           'Failed loading information. Error Code: %s, Error Message: %s',
