@@ -6,12 +6,12 @@
   function narrowDownItController(MenuSearchService){
     var vm=this;
     vm.found=[];
-    vm.RemoveMenuItem=RemoveMenuItem;
-    vm.SearchMenuItem=SearchMenuItem;
+    vm.removeMenuItem=removeMenuItem;
+    vm.searchMenuItem=searchMenuItem;
     vm.searchTerm='';
 
 
-    function SearchMenuItem(){
+    function searchMenuItem(){
       vm.loading=true;
       vm.message='';
       return MenuSearchService.getMatchedMenuItems(vm.searchTerm)
@@ -34,7 +34,7 @@
         vm.message = 'Error loading information';
   });
     }
- function RemoveMenuItem(index){
+ function removeMenuItem(index){
    vm.found.splice(index,1);
  }
 
