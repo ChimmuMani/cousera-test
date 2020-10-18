@@ -17,11 +17,7 @@
       function getMenuItemsComplete(data) {
           var foundItems = data.menu_items;
 
-          foundItems = foundItems.filter(function(item) {
-            console.log("checking");
-                 return item.description.indexOf(searchTerm)!=-1;
-          }
-        );
+      
           return foundItems || [];
         }
     }
