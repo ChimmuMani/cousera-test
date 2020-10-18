@@ -38,15 +38,14 @@ function getMatchedMenuItems(SearchTerm){
   return $http.get(ApiBasePath+"/menu_items.json")
   .then(getMenuItemsComplete);// response contains data
 
-  function getMenuItemsComplete(data){
-    console.log(data.data.menu_items);
-    var foundItems=data.menu_items;//menu_items look on json
-    Console.log(data.data.menu.item);
-    foundItems=foundItems.filter(function(item){
-      return item.description.indexOf(SearchTerm)!=-1;
-    });
-     return foundItems || [];
-  }
+  function getMenuItemsComplete(data) {
+          var foundItems = data.data.menu_items;
+
+          foundItems = foundItems.filter(function(item) {
+            return item.description.indexOf(SearchTerm) !== -1;
+          });
+          return foundItems || [];
+        }
 
 }
 }
