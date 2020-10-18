@@ -18,7 +18,7 @@
           var foundItems = data.menu_items;
 
           foundItems = foundItems.filter(function(item) {
-            cosole.log("checking");
+            console.log("checking");
                  return item.description.indexOf(searchTerm)!=-1;
           }
         );
