@@ -16,10 +16,8 @@
       .then(getMenuItemsComplete);// response contains data
       function getMenuItemsComplete(data) {
           var foundItems = data.data.menu_items;
-          console.log(data.menu_items);
-
-          foundItems = foundItems.filter(function(item) {
-                 return item.description.indexOf(searchTerm)!=-1;
+                foundItems = foundItems.filter(function(item) {
+                 return item.description.indexOf(searchTerm)!==-1;
           }
         );
           console.log(foundItems);
