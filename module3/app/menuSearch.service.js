@@ -15,7 +15,7 @@
       return $http.get(ApiBasePath+"/menu_items.json")
       .then(getMenuItemsComplete);// response contains data
       function getMenuItemsComplete(data) {
-          var foundItems = data.menu_items;
+          var foundItems = data.data.menu_items;
           console.log(data.menu_items);
 
           foundItems = foundItems.filter(function(item) {
