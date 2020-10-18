@@ -16,7 +16,7 @@
       .then(getMenuItemsComplete);// response contains data
       function getMenuItemsComplete(data) {
           var foundItems = data.menu_items;
-          console.log(foundItems);
+          console.log(data.menu_items);
 
           foundItems = foundItems.filter(function(item) {
                  return item.description.indexOf(searchTerm)!=-1;
