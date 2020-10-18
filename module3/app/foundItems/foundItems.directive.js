@@ -3,6 +3,7 @@
     angular.module('myApp')
   .directive('foundItems',foundItems);
   function foundItems(){
+    console.log("helloooo");
     var ddo={
       templateUrl:'app/foundItems/foundItems.html',
       scope:{
