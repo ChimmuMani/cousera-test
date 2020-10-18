@@ -8,8 +8,8 @@
       getMatchedMenuItems:getMatchedMenuItems
     };
     return service;
-    function getMatchedMenuItems(SearchTerm){
-      if(SearchTerm==''){
+    function getMatchedMenuItems(searchTerm){
+      if(searchTerm==''){
         return $q.when([]);
       }
       return $http.get(ApiBasePath+"/menu_items.json")
@@ -18,7 +18,7 @@
           var foundItems = data.menu_items;
 
           foundItems = foundItems.filter(function(item) {
-            return item.description.indexOf(SearchTerm) !== -1;
+            return item.description.indexOf(searchTerm) !== -1;
           });
           return foundItems || [];
         }
