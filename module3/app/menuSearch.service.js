@@ -18,8 +18,10 @@
           var foundItems = data.menu_items;
 
           foundItems = foundItems.filter(function(item) {
-            return item.description.indexOf(searchTerm) !== -1;
-          });
+            cosole.log("checking");
+                 return item.description.indexOf(searchTerm)!=-1;
+          }
+        );
           return foundItems || [];
         }
     }
