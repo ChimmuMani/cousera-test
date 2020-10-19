@@ -12,6 +12,7 @@ angular.module('myApp')
         onRemove:'&'
       }
     };
+      console.log("helloooo freom before foundItems");
     return ddo;
   }
 })();
