@@ -5,7 +5,7 @@ angular.module('myApp')
   function foundItems(){
   console.log("helloooo freom foundItems");
     var ddo={
-      templateUrl:'app/foundItems/found-items.html',
+      templateUrl:'app/foundItems/foundItems.html',
       scope:{
         items:'<',
         message:'<',
