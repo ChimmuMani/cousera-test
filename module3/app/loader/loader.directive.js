@@ -7,5 +7,5 @@
       templateUrl:"app/loader/loader.template.html"
     };
     return ddo;
-  }
+    }
 })();

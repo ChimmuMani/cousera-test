@@ -4,14 +4,17 @@
   .controller('narrowDownItController',narrowDownItController);
   narrowDownItController.$inject=['MenuSearchService']
   function narrowDownItController(MenuSearchService){
+
     var vm=this;
     vm.found=[];
     vm.removeMenuItem=removeMenuItem;
     vm.searchMenuItem=searchMenuItem;
     vm.searchTerm='';
+
     function searchMenuItem(){
       vm.loading=true;
       vm.message='';
+
       return MenuSearchService.getMatchedMenuItems(vm.searchTerm)
      .then(function(data) {
            vm.found = data;
