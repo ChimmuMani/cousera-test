@@ -1,4 +1,4 @@
-(functin(){
+(function(){
   'use strict';
   angular.module('myApp', []);
 })();
