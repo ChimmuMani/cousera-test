@@ -2,10 +2,12 @@
   'use strict';
   angular.module('myApp')
   .controller('narrowDownItController',narrowDownItController);
-  narrowDownItController.$inject=['MenuSearchService']
-  function narrowDownItController(MenuSearchService){
 
+  narrowDownItController.$inject=['MenuSearchService']
+
+  function narrowDownItController(MenuSearchService){
     var vm=this;
+
     vm.found=[];
     vm.removeMenuItem=removeMenuItem;
     vm.searchMenuItem=searchMenuItem;
