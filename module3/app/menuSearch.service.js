@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-    angular.module('myApp')
+  angular.module('myApp')
   .factory('MenuSearchService',MenuSearchService);
   MenuSearchService.$inject = ['$http', '$q', 'ApiBasePath']
   function MenuSearchService($http,$q,ApiBasePath){
@@ -17,10 +17,9 @@
       function getMenuItemsComplete(data) {
           var foundItems = data.data.menu_items;
                 foundItems = foundItems.filter(function(item) {
-                 return item.description.indexOf(searchTerm)!==-1;
-          }
+                 return item.description.indexOf(searchTerm)!==-1;          }
         );
-          console.log(foundItems);
+          //console.log(foundItems);
           return foundItems || [];
         }
     }

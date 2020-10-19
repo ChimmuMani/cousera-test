@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-    angular.module('myApp')
+    var myApp =angular.module('myApp')
   .directive('foundItems',foundItems);
   function foundItems(){
     console.log("helloooo");
