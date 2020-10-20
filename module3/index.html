@@ -40,12 +40,11 @@
 
     <loader ng-if="search.loading"></loader>
     <!-- found-items should be implemented as a component -->
-      <foundItems ng-if="!search.loading"
+      <found-items ng-if="!search.loading"
       items="search.found"
-        message="search.message"
-        on-remove="search.removeMenuItem(index)">
-      </foundItems>
-      <div>hello</div>
+      message="search.message"
+      on-remove="search.removeMenuItem(index)">
+    </found-items>
    </div>
 </body>
 </html>
