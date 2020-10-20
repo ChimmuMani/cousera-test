@@ -4,7 +4,7 @@
   .factory('MenuSearchService',MenuSearchService);
   MenuSearchService.$inject = ['$http', '$q', 'ApiBasePath']
   function MenuSearchService($http,$q,ApiBasePath){
-    console.log("hi from service");
+    //console.log("hi from service");
     var service={
       getMatchedMenuItems:getMatchedMenuItems
     };
@@ -14,7 +14,7 @@
       if(searchTerm==''){
         return $q.when([]);
       }
-        console.log("hi from service"+ApiBasePath+"/menu_items.json");
+        //console.log("hi from service"+ApiBasePath+"/menu_items.json");
       return $http.get(ApiBasePath+"/menu_items.json")
       .then(getMenuItemsComplete);// response contains data
       function getMenuItemsComplete(data) {

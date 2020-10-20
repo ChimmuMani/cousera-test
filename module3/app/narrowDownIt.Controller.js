@@ -16,11 +16,11 @@
     function searchMenuItem(){
       vm.loading=true;
       vm.message='';
-      console.log("Hi from button click controller");
+    //  console.log("Hi from button click controller");
       return MenuSearchService.getMatchedMenuItems(vm.searchTerm)
      .then(function(data) {
            vm.found = data;
-           console.log("Hi from button click controller"+data);
+          // console.log("Hi from button click controller"+data);
            vm.loading = false;
            if (vm.found.length == 0) {
              vm.message = 'Nothing found!';

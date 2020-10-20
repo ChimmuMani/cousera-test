@@ -3,7 +3,7 @@
 angular.module('myApp')
   .directive('foundItems',foundItems);
   function foundItems(){
-  console.log("helloooo freom foundItems");
+//  console.log("helloooo freom foundItems");
     var ddo={
       templateUrl:'app/foundItems/foundItems.html',
       scope:{
@@ -12,7 +12,7 @@ angular.module('myApp')
         onRemove:'&'
       }
     };
-      console.log("helloooo freom before foundItems");
+      //console.log("helloooo freom before foundItems");
     return ddo;
   }
 })();
