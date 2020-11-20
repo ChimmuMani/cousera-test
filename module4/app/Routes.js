@@ -18,6 +18,7 @@
       controller:'categoryController as Cat_Ctrl',
       resolve:{
         categoriesList:['MenuDataService',function(MenuDataService){
+          console.log("Categorycontroller-redirecting");
           return MenuDataService.getAllCategories();
         }]
       }
