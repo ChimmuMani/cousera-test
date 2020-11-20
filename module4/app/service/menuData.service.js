@@ -4,8 +4,9 @@
   .module('Data')
   .service('MenuDataService',MenuDataService);
   MenuDataService.$inject=['$http', 'ApiBasePath'];
-  console.log("Hello Iam in services");
+
   function MenuDataService($http,ApiBasePath){
+      console.log("Hello Iam in services");
     var menudataSer=this;
     // getAllCategories :: this method should return a promise
     // which is a result of using the $http service,
