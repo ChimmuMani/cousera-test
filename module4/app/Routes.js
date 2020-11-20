@@ -14,13 +14,8 @@
     })
     .state('categories',{
       url:'/categories',
-      templateUrl:'app/hello.html',
-      controller:'categoryController as Cat_Ctrl',
-      resolve:{
-        categoriesList:['MenuDataService',function(MenuDataService){
-          return MenuDataService.getAllCategories();
-        }]
-      }
+      templateUrl:'app/component/menuApp/categories.template.html',
+    
     })
     .state('items',{
       url: '/items/{categoryId}',
