@@ -13,7 +13,7 @@
       templateUrl:'app/home.template.html'
     })
     .state('categories',{
-      url:'/categories',
+      url:'categories',
       templateUrl:'app/component/menuApp/category.template.html',
       controller:'categoryController as Cat_Ctrl',
       resolve:{
