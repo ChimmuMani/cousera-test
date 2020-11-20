@@ -9,11 +9,11 @@
     $urlRouterProvider.otherwise('/');
     $stateProvider
     .state('home',{
-      url:'/categories',
+      url:'/',
       templateUrl:'app/home.template.html'
     })
     .state('categories',{
-      url:'/',
+      url:'/categories',
       templateUrl:'app/component/menuApp/categories.template.html',
       controller:'categoryController as Cat_Ctrl',
       resolve:{
