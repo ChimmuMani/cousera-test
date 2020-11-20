@@ -15,12 +15,7 @@
     .state('categories',{
       url:'/categories',
       templateUrl:'app/home.template.html',
-      controller:'categoryController as Cat_Ctrl',
-      resolve:{
-        categoriesList:['MenuDataService',function(MenuDataService){
-          console.log("Categorycontroller-redirecting");
-          return MenuDataService.getAllCategories();
-        }]
+      
       }
     })
     .state('items',{
