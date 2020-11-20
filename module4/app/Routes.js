@@ -9,13 +9,18 @@
     $urlRouterProvider.otherwise('/');
     $stateProvider
     .state('home',{
-      url:'/',
+      url:'/categories',
       templateUrl:'app/home.template.html'
     })
     .state('categories',{
-      url:'/categories',
-      templateUrl:'app/home.template.html',
-      
+      url:'/',
+      templateUrl:'app/component/menuApp/categories.template.html',
+      controller:'categoryController as Cat_Ctrl',
+      resolve:{
+        categoriesList:['MenuDataService',function(MenuDataService){
+
+          return MenuDataService.getAllCategories();
+        }]
       }
     })
     .state('items',{
