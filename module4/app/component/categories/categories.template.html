@@ -1,0 +1,6 @@
+<h1 style="text-align:center;color:Green">Menu Category</h1>
+<ul style="color:Maroon">
+  <li ng-repeat="cat in $cat.items">
+    <a ui-sref="items({categoryId:cat.short_name})">{{cat.name}}</a>
+  </li>
+</ul>
