@@ -1,9 +1,10 @@
 (function(){}(
   'use strict';
   angular
-  .module('MenuApp')
+  .module('Data')
   .service('MenuDataService',MenuDataService);
   MenuDataService.$inject=['$http', 'ApiBasePath'];
+  console.log("Hello Iam in services");
   function MenuDataService($http,ApiBasePath){
     var menudataSer=this;
     // getAllCategories :: this method should return a promise

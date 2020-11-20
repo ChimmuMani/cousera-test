@@ -5,6 +5,7 @@
   .config(RoutesConfig);
   RoutesConfig.$inject = ['$stateProvider','$urlRouterProvider'];
   function RoutesConfig($stateProvider,$urlRouterProvider) {
+    console.log("I am in router");
     $urlRouterProvider.otherwise('/');
     $stateProvider
     .state('home',{
