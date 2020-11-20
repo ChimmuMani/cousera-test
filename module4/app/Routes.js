@@ -14,8 +14,8 @@
     })
     .state('categories',{
       url:'/categories',
-      templateUrl:'app/component/menuApp/categories.template.html',
-    
+      templateUrl:'app/categories.template.html',
+
     })
     .state('items',{
       url: '/items/{categoryId}',
