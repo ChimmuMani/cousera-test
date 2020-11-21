@@ -15,7 +15,7 @@
     menudataSer.getAllCategories=function(){
       return $http({
         method: 'GET',
-        url:ApiBasePath+'/categories.json';
+        url:ApiBasePath+'/categories.json',
       }).then(function(result){
         return result.data;
       })
