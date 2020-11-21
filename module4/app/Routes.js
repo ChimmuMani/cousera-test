@@ -15,7 +15,12 @@
     .state('categories',{
       url:'/categories',
       templateUrl:'app/component/menuApp/category.template.html',
-      
+      controller: 'CategoriesCtrl as categories',
+        resolve: {
+          categoriesList: ['MenuDataService', function (MenuDataService) {
+            return MenuDataService.getAllCategories();
+          }]
+        }
     })
     .state('items',{
       url: '/items/{categoryId}',
