@@ -1,5 +1,6 @@
 (function(){}(
   'use strict';
+  console.log("LOG Hello");
   angular
   .module('Data')
   .service('MenuDataService',MenuDataService);
