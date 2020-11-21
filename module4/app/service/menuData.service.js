@@ -1,4 +1,4 @@
-(function(){}(
+(function(){
   'use strict';
   console.log("LOG Hello");
   angular
@@ -37,4 +37,4 @@
     };
 
   }
-));
+}());
