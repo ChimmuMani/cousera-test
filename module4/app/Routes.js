@@ -16,6 +16,12 @@
       url:'/categories',
       templateUrl:'app/component/menuApp/category.template.html',
       controller:'CategoriesCtrl as categories',
+        resolve: {
+          cateList: ['MenuDataService', function (MenuDataService) {
+            //console.log("menuDAta");
+            return MenuDataService.getAllCategories();
+          }]
+        }
 
     })
     .state('items',{
