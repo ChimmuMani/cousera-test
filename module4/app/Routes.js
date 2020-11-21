@@ -16,7 +16,7 @@
       url:'/categories',
       templateUrl:'app/component/menuApp/category.template.html',
       controller:'CategoriesCtrl as categories',
-      resolve: {
+        resolve: {
           cateList: ['MenuDataService', function (MenuDataService) {
             //console.log("menuDAta");
             return MenuDataService.getAllCategories();
@@ -25,7 +25,7 @@
     })
     .state('items',{
       url: '/items/{categoryId}',
-      templateUrl: 'app/component/menuApp/menuapp-items.template.html',
+      templateUrl: 'app/component/menuApp/menu-items.template.html',
       controller: 'ItemsCtrl as itemsList',
       resolve:{
         items:['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {

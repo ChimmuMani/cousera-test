@@ -5,7 +5,7 @@
   .component('itemDetails',{
     templateUrl:'app/component/categories/itemDetails.template.html',
     bindings:{
-      itemDetail:'<'
+      items:'<'
     }
   });
-}());
+}());s
