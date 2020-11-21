@@ -1,6 +1,6 @@
 (function() {
   'use strict';
   angular.module('Data')
-    .constant('ApiBasePath', "//davids-restaurant.herokuapp.com");
-    console.log("APIBASEPATH");
+    .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com");
+    console.log("APIBASEPATH"+ApiBasePath);
 })();
