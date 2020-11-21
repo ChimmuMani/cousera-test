@@ -4,7 +4,7 @@
   angular
     .module('Data')
     .controller('CategoriesCtrl', CategoriesCtrl);
- categoryController.$inject = ['categoriesList']
+ CategoriesCtrl.$inject = ['categoriesList']
   function  CategoriesCtrl(categoriesList) {
     console.log("I am in Category Controller");
     var categories = this;
