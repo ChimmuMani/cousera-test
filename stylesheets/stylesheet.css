@@ -8,11 +8,11 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #606c71; 
-  background-color: #679ecf;
+  background-color:#ccccff;
 }
 
 a {
-  color: #1e6bb8;
+  color: #581845;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
